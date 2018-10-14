@@ -1,0 +1,123 @@
+$active : #efae02
+
+@mixin before
+    &:before
+        content: ''
+        position: absolute
+        width: 100%
+        height: 1px
+        background-color: $active
+        bottom: 0
+        left: 0
+
+*
+    box-sizing: border-box
+    outline: none
+
+body
+    height: 100vh
+    background: url(../img/bg.jpg) center no-repeat
+    background-size: cover
+    font-family: 'Open Sans', sans-serif
+
+.calc
+    width: 1072px
+    height: 650px
+    border: 2px solid $active
+    margin: 0 auto
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: top
+
+.tabs
+    width: 100%
+    padding-top: 26px
+    padding-bottom: 35px
+    display: flex
+    justify-content: center
+    .tab-left, .tab-right
+        color: #111
+        width: 200px
+        height: 70px
+        border-radius: 0 15px 0 0
+        background-image: linear-gradient(to top, rgba(0, 0, 0, 0.77) 0%, #323131 100%)
+        margin-right: 5px
+        color: #cecece
+        font-size: 18px
+        font-weight: 700
+        text-align: center
+        line-height: 70px
+        cursor: pointer
+    .tab-left
+        border-radius: 15px 0 0 0
+    .active
+        background: $active
+        color: #000
+        position: relative
+        &:before
+            content: ''
+            position: absolute
+            width: 100%
+            height: 1px
+            background-color: $active
+            left: 0
+            bottom: -6px
+
+.blocks
+    width: 65%
+    margin-bottom: 30px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    &-title
+        position: relative
+        color: #ffffff
+        font-size: 30px
+        font-weight: 700
+        @include before
+#pages-block
+    display: none
+
+.counter
+    width: 132px
+    height: 60px
+    border: 3px solid rgba(239, 173, 2, .6)
+    background-color: transparent
+    text-align: center
+    color: $active
+    font-size: 48px
+    font-weight: 700
+
+.addiction
+    color: $active
+    font-size: 30px
+    font-weight: 700
+    &-title
+        text-align: center
+    &-block
+        text-align: left
+        input[type="checkbox"]
+            width: 25px
+            height: 25px
+            opacity: .5
+
+.total
+    width: 60%
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-top: 60px
+    margin-bottom: 20px
+    color: #ffffff
+    font-size: 36px
+    font-weight: 700
+    &-count
+        width: 200px
+        height: 60px
+        color: $active
+        font-size: 56px
+        font-weight: 700
+        text-align: right
+        border: none
+        background-color: transparent
